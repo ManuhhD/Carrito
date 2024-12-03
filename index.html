@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Elige tus comidas</h1>
+        
+        <div class="products">
+            <div class="product">
+                <h3>Hamburguesa</h3>
+                <img src="Hamburguesa.png" alt="producto1" class="product-image">
+                <p>Precio: $10</p>
+                <button class="add-to-cart" data-product="Hamburguesa" data-price="10">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Pancho</h3>
+                <img src="Panchito.png" alt="producto2" class="product-image">
+                <p>Precio: $20</p>
+                <button class="add-to-cart" data-product="Pancho" data-price="20">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <h3>Nuggets</h3>
+                <img src="Nugguet.png" alt="producto3" class="product-image">
+                <p>Precio: $30</p>
+                <button class="add-to-cart" data-product="Nuguets" data-price="30">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2>Tu Carrito</h2>
+            <ul id="cart-items">
+            </ul>
+            <div class="total">
+                <p>Total: $<span id="total-price">0</span></p>
+            </div>
+            <button id="clear-cart">Vaciar Carrito</button>
+        </div>
+    </div>
+
+    <script src="script.java"></script>
+</body>
+</html>
