@@ -6,23 +6,23 @@ const clearCartButton = document.getElementById('clear-cart');
 // Array para almacenar los productos en el carrito
 let cart = [];
 
-// Función para agregar un producto al carrito
+// Funcion para agregar un producto al carrito
 function addToCart(productName, productPrice) {
-    // Verificar si el producto ya está en el carrito
+    // Verificar si el producto ya esta en el carrito
     const existingProductIndex = cart.findIndex(item => item.name === productName);
     
     if (existingProductIndex !== -1) {
-        // Si el producto ya está en el carrito, aumentar la cantidad
+        // Si el producto ya esta en el carrito, aumentar la cantidad
         cart[existingProductIndex].quantity += 1;
     } else {
-        // Si el producto no está en el carrito, agregarlo
+        // Si el producto no esta en el carrito, agregarlo
         cart.push({ name: productName, price: parseFloat(productPrice), quantity: 1 });
     }
     
     updateCart();
 }
 
-// Función para actualizar el carrito en la interfaz
+// Funcion para actualizar el carrito en la interfaz
 function updateCart() {
     // Limpiar la lista de productos
     cartItemsList.innerHTML = '';
@@ -34,7 +34,7 @@ function updateCart() {
         const li = document.createElement('li');
         li.innerHTML = `${item.name} x${item.quantity} - $${item.price * item.quantity}`;
         
-        // Agregar un botón para eliminar el producto
+        // Agregar un boton para eliminar el producto
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Eliminar';
         removeButton.onclick = () => removeFromCart(item.name);
@@ -50,14 +50,14 @@ function updateCart() {
     totalPriceElement.textContent = total.toFixed(2);
 }
 
-// Función para eliminar un producto del carrito
+// Funcion para eliminar un producto del carrito
 function removeFromCart(productName) {
     // Filtrar el producto para eliminarlo del carrito
     cart = cart.filter(item => item.name !== productName);
     updateCart();
 }
 
-// Función para vaciar el carrito
+// Funcion para vaciar el carrito
 clearCartButton.addEventListener('click', () => {
     cart = [];
     updateCart();
